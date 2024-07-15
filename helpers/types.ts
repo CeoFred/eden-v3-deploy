@@ -9,6 +9,7 @@ export enum eTenderly {
 }
 
 export type eNetwork =
+  | eAssetChainNetwork
   | eEthereumNetwork
   | ePolygonNetwork
   | eXDaiNetwork
@@ -21,6 +22,11 @@ export type eNetwork =
   | eBaseNetwork;
 
 type eTenderlyNetwork = "tenderly";
+
+export enum eAssetChainNetwork {
+  main = "assetchain",
+  testnet = "assetchain-testnet",
+}
 
 export enum eFantomNetwork {
   main = "fantom",
@@ -439,6 +445,7 @@ export type iParamsPerNetworkWithDefault<T> = {
 export interface iParamsPerNetworkAll<T>
   extends iEthereumParamsPerNetwork<T>,
     iPolygonParamsPerNetwork<T>,
+    iAssetChainParamsPerNetwork<T>,
     iXDaiParamsPerNetwork<T> {}
 
 export interface iEthereumParamsPerNetwork<T> {
@@ -446,6 +453,11 @@ export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.ropsten]: T;
   [eEthereumNetwork.main]: T;
   [eEthereumNetwork.tenderly]: T;
+}
+
+export interface iAssetChainParamsPerNetwork<T> { // Add this interface
+  [eAssetChainNetwork.main]: T;
+  [eAssetChainNetwork.testnet]: T;
 }
 
 export interface iPolygonParamsPerNetwork<T> {

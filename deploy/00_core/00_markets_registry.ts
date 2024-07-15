@@ -3,6 +3,7 @@ import { DeployFunction } from "hardhat-deploy/types";
 import { PoolAddressesProviderRegistry } from "../../typechain";
 import { waitForTx } from "../../helpers/utilities/tx";
 import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
+const { exec } = require('child_process');
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -35,6 +36,7 @@ const func: DeployFunction = async function ({
   deployments.log(
     `[Deployment] Transferred ownership of PoolAddressesProviderRegistry to: ${addressesProviderRegistryOwner} `
   );
+
   return true;
 };
 

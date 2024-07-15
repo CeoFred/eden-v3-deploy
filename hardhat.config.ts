@@ -127,6 +127,14 @@ export default {
       eBaseNetwork.baseGoerli,
       84531
     ),
+       "assetchain-testnet": {
+      url: "https://enugu-rpc.assetchain.org",
+      chainId: 42421, 
+      accounts: ['a379752927be518dea1cb50c9e08f72374336f1cdb58aec27a5d152554200d76'],
+       live: false,
+       blockGasLimit:12450000,
+       gasPrice:8000000000
+    },
   },
   namedAccounts: {
     ...DEFAULT_NAMED_ACCOUNTS,
@@ -215,6 +223,14 @@ export default {
         urls: {
           apiURL: "https://api.basescan.org/api",
           browserURL: "https://basescan.org/",
+        },
+      },
+      {
+        network: "assetchain-testnet",
+        chainId: 42421,
+        urls: {
+           apiURL: "https://scan-testnet.assetchain.org/api",
+          browserURL: "https://scan-testnet.assetchain.org",
         },
       },
     ],

@@ -69,6 +69,7 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   WONE: parseUnits("0.28", 8).toString(),
   WAVAX: parseUnits("86.59", 8).toString(),
   WFTM: parseUnits("2.42", 8).toString(),
+  WRWA: parseUnits("0.05", 8).toString(),
   WMATIC: parseUnits("1.40", 8).toString(),
   SUSD: parseUnits("1", 8).toString(),
   SUSHI: parseUnits("2.95", 8).toString(),

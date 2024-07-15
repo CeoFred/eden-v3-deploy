@@ -13,6 +13,7 @@ import {
   AssetType,
 } from "./types";
 import AaveMarket from "../markets/aave";
+import AssetChainTestNetConfig from "../markets/assetchain"; // Add this import
 import EthereumV3Config from "../markets/ethereum";
 import AaveTestMarket from "../markets/test";
 import HarmonyMarket from "../markets/harmony";
@@ -52,6 +53,7 @@ export enum ConfigNames {
   Ethereum = "Ethereum",
   Base = "Base",
   baseGoerli = "base-goerli",
+  AssetChainTestNet = "assetchain-testnet",
 }
 
 export const getParamPerNetwork = <T>(
@@ -116,7 +118,9 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
     case ConfigNames.Arbitrum:
       return ArbitrumConfig;
     case ConfigNames.Ethereum:
-      return EthereumV3Config;
+      return EthereumV3Config;  
+      case ConfigNames.AssetChainTestNet: // Add this case
+      return AssetChainTestNetConfig;
     case ConfigNames.Base:
       return BaseConfig;
     default:
