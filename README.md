@@ -109,7 +109,7 @@ describe('Tests', () => {
 ## How to verify your contract deployments
 
 ```
-npx hardhat --network XYZ etherscan-verify --api-key YZX
+npx hardhat --network assetchain-testnet etherscan-verify --api-url https://scan-testnet.assetchain.org/api
 ```
 
 ## Project Structure

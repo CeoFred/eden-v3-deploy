@@ -215,7 +215,9 @@ export default {
     ? DETERMINISTIC_FACTORIES
     : undefined,
   etherscan: {
-    apiKey: ETHERSCAN_KEY,
+    apiKey: {
+      "assetchain-testnet":"abc"
+    },
     customChains: [
       {
         network: eBaseNetwork.base,
@@ -225,14 +227,14 @@ export default {
           browserURL: "https://basescan.org/",
         },
       },
-      {
+       {
         network: "assetchain-testnet",
         chainId: 42421,
         urls: {
-           apiURL: "https://scan-testnet.assetchain.org/api",
-          browserURL: "https://scan-testnet.assetchain.org",
-        },
-      },
+          apiURL: "https://scan-testnet.assetchain.org/api",
+          browserURL: "https://scan-testnet.assetchain.org/"
+        }
+      }
     ],
   },
 };
