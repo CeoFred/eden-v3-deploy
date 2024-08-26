@@ -2,28 +2,24 @@ import { eAssetChainNetwork, IAaveConfiguration } from "../../helpers/types";
 import { AaveMarket } from "../aave/index";
 import { strategyDAI, strategyUSDT, strategyWETH } from "../aave/reservesConfigs";
 import { ZERO_ADDRESS } from "../../helpers/constants";
-import { strategyAAVE, strategyLINK, strategyUSDC, strategyWBTC, strategyWRWA, strategyCRV, strategySUSHI } from "./reservesConfigs";
+import { strategyAAVE, strategyUSDC, strategyEDEN} from "./reservesConfigs";
 
 export const AssetChainTestNetMarket: IAaveConfiguration = {
   ...AaveMarket,
   ProviderId: 42, // Replace with actual Provider ID for AssetChain
   WrappedNativeTokenSymbol: "WRWA",
-  MarketId: "AssetChain Eden Market",
+  MarketId: "Asset Chain Eden Market",
   ATokenNamePrefix: "AssetChain",
   StableDebtTokenNamePrefix: "AssetChain",
   VariableDebtTokenNamePrefix: "AssetChain",
   SymbolPrefix: "RWA",
   ReservesConfig: {
-    DAI: strategyDAI,
-    LINK: strategyLINK,
-    USDC: strategyUSDC,
-    WBTC: strategyWBTC,
-    WETH: strategyWETH,
-    USDT: strategyUSDT,
-    AAVE: strategyAAVE,
-    WRWA: strategyWRWA,
-    CRV: strategyCRV,
-    SUSHI: strategySUSHI,
+    // DAI: strategyDAI,
+    // USDC: strategyUSDC,
+    // USDT: strategyUSDT,
+    // AAVE: strategyAAVE,
+    WRWA: strategyWETH,
+    // EDEN: strategyEDEN,
   },
   ReserveAssets: {
     [eAssetChainNetwork.main]: {
@@ -39,14 +35,12 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
       SUSHI: "0xYourMainnetAddress",
     },
     [eAssetChainNetwork.testnet]: {
-      AAVE: ZERO_ADDRESS,
-      DAI: ZERO_ADDRESS,
-      LINK: ZERO_ADDRESS,
-      USDC: ZERO_ADDRESS,
-      WBTC: ZERO_ADDRESS,
-      WETH: ZERO_ADDRESS,
-      USDT: ZERO_ADDRESS,
-      WRWA: ZERO_ADDRESS,
+      // AAVE: "0x89463A113446320ea9cc037158233746f3a24325",
+      // DAI: "0x987C5698bcf886C30dce800E3DCBd20FFE5f0F1A",
+      // USDC: "0x60c6E98C1916CC701c5acBf7D80A38019740Ac69",
+      // USDT: "0x019154BC112c3b66b82f3cbd854b57F48189Cfa5",
+      WRWA: "0xf43Bffa4e58E5F8114FbbaF7E72694D1Da2248Dd",
+      // EDEN: "0x5bC3ABBA3F0C29E8B043F9609c12330A319a2FC0",
     },
   },
   ChainlinkAggregator: {
@@ -61,16 +55,19 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
       SUSHI: "0xYourMainnetAggregatorAddress",
       CRV: "0xYourMainnetAggregatorAddress",
     },
+    [eAssetChainNetwork.testnet]: {
+      WRWA: "0x1EA09B2a1E303B5b62211E90E593699426E3BE80",
+    },
   },
   EModes: {
-    StableEMode: {
-      id: "1",
-      ltv: "9700",
-      liquidationThreshold: "9750",
-      liquidationBonus: "10100",
-      label: "Stablecoins",
-      assets: ["USDC", "USDT", "DAI"],
-    },
+    // StableEMode: {
+    //   id: "1",
+    //   ltv: "9700",
+    //   liquidationThreshold: "9750",
+    //   liquidationBonus: "10100",
+    //   label: "Stablecoins",
+    //   assets: ["USDC", "USDT", "DAI"],
+    // },
   },
 };
 

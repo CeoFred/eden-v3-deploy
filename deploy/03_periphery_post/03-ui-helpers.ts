@@ -26,12 +26,17 @@ const func: DeployFunction = async function ({
     return;
   }
   // Deploy UiIncentiveDataProvider getter helper
-  await deploy("UiIncentiveDataProviderV3", {
+  const uiIncentiveDataProviderArtifact = await deploy("UiIncentiveDataProviderV3", {
     from: deployer,
   });
+  // verify contract using hardhat verify
+  // await hre.run("verify:verify", {
+  //   address: uiIncentiveDataProviderArtifact.address,
+  //   constructorArguments: [],
+  // });
 
   // Deploy UiPoolDataProvider getter helper
-  await deploy("UiPoolDataProviderV3", {
+  const uiPoolDataProviderArtifact = await deploy("UiPoolDataProviderV3", {
     from: deployer,
     args: [
       chainlinkAggregatorProxy[network],
@@ -39,6 +44,15 @@ const func: DeployFunction = async function ({
     ],
     ...COMMON_DEPLOY_PARAMS,
   });
+
+  // verify contract using hardhat verify
+  // await hre.run("verify:verify", {
+  //   address: uiPoolDataProviderArtifact.address,
+  //   constructorArguments: [
+  //     chainlinkAggregatorProxy[network],
+  //     chainlinkEthUsdAggregatorProxy[network],
+  //   ],
+  // });
 };
 
 func.tags = ["periphery-post", "ui-helpers"];

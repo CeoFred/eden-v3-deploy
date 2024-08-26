@@ -42,7 +42,7 @@ nano .env
 Run the deployments scripts and specify which network & aave market configs you wish to deploy.
 
 ```
-HARDHAT_NETWORK=goerli npx hardhat deploy
+HARDHAT_NETWORK=assetchain-testnet npx hardhat deploy
 ```
 
 ## How to deploy Aave V3 in fork network

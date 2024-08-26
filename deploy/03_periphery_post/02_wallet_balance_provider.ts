@@ -10,10 +10,20 @@ const func: DeployFunction = async function ({
   const { deploy } = deployments;
   const { deployer } = await getNamedAccounts();
 
-  await deploy("WalletBalanceProvider", {
+  const walletBalanceProviderArtifact = await deploy("WalletBalanceProvider", {
     from: deployer,
     ...COMMON_DEPLOY_PARAMS,
   });
+
+try {
+    // verify contract using hardhat verify
+  // await hre.run("verify:verify", {
+  //   address: walletBalanceProviderArtifact.address,
+  //     constructorArguments: [],
+  //   });
+  } catch (error) {
+    console.log("Error verifying contract", error);
+  }
 };
 
 func.tags = ["periphery-post", "walletProvider"];

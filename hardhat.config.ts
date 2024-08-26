@@ -133,14 +133,16 @@ export default {
       accounts: ['a379752927be518dea1cb50c9e08f72374336f1cdb58aec27a5d152554200d76'],
        live: false,
        blockGasLimit:12450000,
-       gasPrice:8000000000
+       gasPrice:8000000000,
+    timeout: 100000000,
+       
     },
   },
   namedAccounts: {
     ...DEFAULT_NAMED_ACCOUNTS,
   },
   mocha: {
-    timeout: 0,
+    timeout: 100000000,
   },
   dependencyCompiler: {
     paths: [
@@ -215,6 +217,11 @@ export default {
     ? DETERMINISTIC_FACTORIES
     : undefined,
   etherscan: {
+    sourcify: {
+    // Disabled by default
+    // Doesn't need an API key
+    enabled: true
+  },
     apiKey: {
       "assetchain-testnet":"abc"
     },
