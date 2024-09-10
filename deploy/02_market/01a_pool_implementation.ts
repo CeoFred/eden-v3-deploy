@@ -51,10 +51,24 @@ const func: DeployFunction = async function ({
     ...COMMON_DEPLOY_PARAMS,
   });
 
-  // Initialize implementation
+try {
+    // Initialize implementation
   const pool = await getPool(poolArtifact.address);
   await waitForTx(await pool.initialize(addressesProviderAddress));
   console.log("Initialized Pool Implementation");
+
+} catch (error) {
+  
+}
+ try {
+   //verify contract using hardhat verify
+  await hre.run("verify:verify", {
+    address: poolArtifact.address,
+    constructorArguments: [addressesProviderAddress],
+  });
+ } catch (error) {
+  
+ }
 };
 
 func.id = "PoolImplementation";

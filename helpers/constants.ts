@@ -78,8 +78,8 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   JEUR: parseUnits("1.126", 8).toString(),
   DPI: parseUnits("149", 8).toString(),
   CBETH: parseUnits("4000", 8).toString(),
-  RWA: parseUnits("0.04", 8).toString(),
-  EDEN: parseUnits("4", 8).toString(),
+  RWA: parseUnits("0.05", 8).toString(),
+  EDEN: parseUnits("32", 8).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {
@@ -103,7 +103,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
-  "assetchain-testnet": "0x1EA09B2a1E303B5b62211E90E593699426E3BE80",
+  "assetchain-testnet": "0xd8EccdC2b114eBc4B565Cb399Cb99620d9816194",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -125,7 +125,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   "fantom-testnet": "0xB8C458C957a6e6ca7Cc53eD95bEA548c52AFaA24",
   ropsten: "0x12BAaa24D85A4A180F0d5ae67b6aCbDDD58968EA",
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
-  "assetchain-testnet": "0x1EA09B2a1E303B5b62211E90E593699426E3BE80",
+  "assetchain-testnet": "0xd8EccdC2b114eBc4B565Cb399Cb99620d9816194",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
 };

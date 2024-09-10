@@ -70,6 +70,12 @@ const func: DeployFunction = async function ({
   const poolProxyAddress = await addressesProviderInstance.getPool();
   deployments.log("- Deployed Proxy:", poolProxyAddress);
 
+  //verify proxy
+  await hre.run("verify:verify", {
+    address: poolProxyAddress,
+    constructorArguments: [addressesProvider],
+  });
+
   await save(POOL_PROXY_ID, {
     ...proxyArtifact,
     address: poolProxyAddress,

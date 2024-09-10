@@ -1,6 +1,6 @@
 import { eAssetChainNetwork, IAaveConfiguration } from "../../helpers/types";
 import { AaveMarket } from "../aave/index";
-import { strategyDAI, strategyUSDT, strategyWETH } from "../aave/reservesConfigs";
+import { strategyDAI, strategyUSDT, strategyWETH,strategyLINK } from "../aave/reservesConfigs";
 import { ZERO_ADDRESS } from "../../helpers/constants";
 import { strategyAAVE, strategyUSDC, strategyEDEN} from "./reservesConfigs";
 
@@ -14,12 +14,13 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
   VariableDebtTokenNamePrefix: "AssetChain",
   SymbolPrefix: "RWA",
   ReservesConfig: {
-    // DAI: strategyDAI,
-    // USDC: strategyUSDC,
-    // USDT: strategyUSDT,
-    // AAVE: strategyAAVE,
+    DAI: strategyDAI,
+    USDC: strategyUSDC,
+    USDT: strategyUSDT,
     WRWA: strategyWETH,
-    // EDEN: strategyEDEN,
+    EDEN: strategyEDEN,
+    LINK: strategyLINK,
+
   },
   ReserveAssets: {
     [eAssetChainNetwork.main]: {
@@ -35,12 +36,13 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
       SUSHI: "0xYourMainnetAddress",
     },
     [eAssetChainNetwork.testnet]: {
-      // AAVE: "0x89463A113446320ea9cc037158233746f3a24325",
-      // DAI: "0x987C5698bcf886C30dce800E3DCBd20FFE5f0F1A",
-      // USDC: "0x60c6E98C1916CC701c5acBf7D80A38019740Ac69",
-      // USDT: "0x019154BC112c3b66b82f3cbd854b57F48189Cfa5",
-      WRWA: "0xf43Bffa4e58E5F8114FbbaF7E72694D1Da2248Dd",
-      // EDEN: "0x5bC3ABBA3F0C29E8B043F9609c12330A319a2FC0",
+        DAI: ZERO_ADDRESS,
+        USDC: ZERO_ADDRESS,
+       USDT: ZERO_ADDRESS,
+      WRWA: ZERO_ADDRESS,
+      EDEN: ZERO_ADDRESS,
+      LINK: ZERO_ADDRESS,
+
     },
   },
   ChainlinkAggregator: {
@@ -56,18 +58,22 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
       CRV: "0xYourMainnetAggregatorAddress",
     },
     [eAssetChainNetwork.testnet]: {
-      WRWA: "0x1EA09B2a1E303B5b62211E90E593699426E3BE80",
-    },
+      WRWA: "0xd8EccdC2b114eBc4B565Cb399Cb99620d9816194",
+      EDEN:"0xBBf418E266E87A7ea553D530E175f95d145Cc88F",
+      DAI:"0xC9065F8f9b75C30D7D84471295592C2f3eB295eD",
+      USDC:"0x233cB21Da63516e5cB5aCe464B7fe28107819c4C",
+      USDT:"0x654BB967d8dE9759840fcC202E5f9c72d88f9381"
+        },
   },
   EModes: {
-    // StableEMode: {
-    //   id: "1",
-    //   ltv: "9700",
-    //   liquidationThreshold: "9750",
-    //   liquidationBonus: "10100",
-    //   label: "Stablecoins",
-    //   assets: ["USDC", "USDT", "DAI"],
-    // },
+    StableEMode: {
+      id: "1",
+      ltv: "9700",
+      liquidationThreshold: "9750",
+      liquidationBonus: "10100",
+      label: "Stablecoins",
+      assets: ["USDC", "DAI","USDT"],
+    },
   },
 };
 

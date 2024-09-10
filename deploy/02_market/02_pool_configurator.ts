@@ -11,6 +11,7 @@ import { getPoolConfiguratorProxy, waitForTx } from "../../helpers";
 const func: DeployFunction = async function ({
   getNamedAccounts,
   deployments,
+  ...hre
 }: HardhatRuntimeEnvironment) {
   const { deploy, get } = deployments;
   const { deployer } = await getNamedAccounts();
@@ -29,6 +30,16 @@ const func: DeployFunction = async function ({
     },
     ...COMMON_DEPLOY_PARAMS,
   });
+
+  try {
+    //verify contract using hardhat verify
+    await hre.run("verify:verify", {
+      address: poolConfigArtifact.address,
+      constructorArguments: [],
+    });
+  } catch (error) {
+    
+  }
 
   // Initialize implementation
   const poolConfig = await getPoolConfiguratorProxy(poolConfigArtifact.address);

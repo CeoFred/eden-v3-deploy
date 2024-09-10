@@ -45,14 +45,19 @@ const func: DeployFunction = async function ({
     ...COMMON_DEPLOY_PARAMS,
   });
 
+  console.log(chainlinkAggregatorProxy[network]);
+  console.log(chainlinkEthUsdAggregatorProxy[network]);
+  console.log("chain link aggragators")
+
+  
   // verify contract using hardhat verify
-  // await hre.run("verify:verify", {
-  //   address: uiPoolDataProviderArtifact.address,
-  //   constructorArguments: [
-  //     chainlinkAggregatorProxy[network],
-  //     chainlinkEthUsdAggregatorProxy[network],
-  //   ],
-  // });
+  await hre.run("verify:verify", {
+    address: uiPoolDataProviderArtifact.address,
+    constructorArguments: [
+      chainlinkAggregatorProxy[network],
+      chainlinkEthUsdAggregatorProxy[network],
+    ],
+  });
 };
 
 func.tags = ["periphery-post", "ui-helpers"];
