@@ -48,6 +48,28 @@ const func: DeployFunction = async function ({
     chainlinkAggregators
   );
 
+  console.log("---- oracle  -----")
+
+  console.log(addressesProviderAddress,
+      assets,
+      sources,
+      fallbackOracleAddress,
+      ZERO_ADDRESS,
+      parseUnits("1", OracleQuoteUnit))
+
+        await deploy("NewOracle", {
+    from: deployer,
+    args: [
+      addressesProviderAddress,
+      assets,
+      sources,
+      fallbackOracleAddress,
+      ZERO_ADDRESS,
+      parseUnits("1", OracleQuoteUnit),
+    ],
+    ...COMMON_DEPLOY_PARAMS,
+    contract: "AaveOracle",
+  });
   // Deploy AaveOracle
   await deploy(ORACLE_ID, {
     from: deployer,
@@ -66,7 +88,7 @@ const func: DeployFunction = async function ({
   return true;
 };
 
-func.id = `Oracles:${MARKET_NAME}:aave-v3-core@${V3_CORE_VERSION}`;
+func.id = `Oracles:${MARKET_NAME}:aave-v3-core@${V3_CORE_VERSION}2`;
 
 func.tags = ["market", "oracle"];
 

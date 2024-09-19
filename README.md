@@ -24,6 +24,17 @@ This Node.js repository contains the configuration and deployment scripts for th
    ```
    npm run compile
    ```
+##  How to Run specific task
+
+``
+npx hardhat deploy-EdenOracle --network assetchain-testnet
+``
+
+## How to run specific script
+
+``
+ npx hardhat run scripts/verify.ts --network assetchain-testnet
+``
 
 ## How to deploy Aave V3 in testnet network
 

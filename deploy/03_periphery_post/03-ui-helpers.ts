@@ -45,10 +45,6 @@ const func: DeployFunction = async function ({
     ...COMMON_DEPLOY_PARAMS,
   });
 
-  console.log(chainlinkAggregatorProxy[network]);
-  console.log(chainlinkEthUsdAggregatorProxy[network]);
-  console.log("chain link aggragators")
-
   
   // verify contract using hardhat verify
   await hre.run("verify:verify", {

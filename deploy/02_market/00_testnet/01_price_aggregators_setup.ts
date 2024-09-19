@@ -69,7 +69,7 @@ const func: DeployFunction = async function ({
 };
 
 // This script can only be run successfully once per market, core version, and network
-func.id = `MockPriceAggregators:${MARKET_NAME}:aave-v3-core@${V3_CORE_VERSION}`;
+func.id = `MockPriceAggregators:${MARKET_NAME}:aave-v3-core@${V3_CORE_VERSION}N`;
 
 func.tags = ["market", "init-testnet", "price-aggregators-setup"];
 

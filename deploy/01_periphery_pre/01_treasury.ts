@@ -88,7 +88,7 @@ const func: DeployFunction = async function ({
   // Deploy Treasury Controller
   const treasuryController = await deploy(TREASURY_CONTROLLER_ID, {
     from: deployer,
-    contract: "AaveEcosystemReserveController",
+    contract: "EdenEcosystemReserveController",
     args: [treasuryOwner],
     ...COMMON_DEPLOY_PARAMS,
   });
@@ -96,7 +96,7 @@ const func: DeployFunction = async function ({
   // Deploy Treasury implementation and initialize proxy
   const treasuryImplArtifact = await deploy(TREASURY_IMPL_ID, {
     from: deployer,
-    contract: "AaveEcosystemReserveV2",
+    contract: "EdenEcosystemReserveV2",
     args: [],
     ...COMMON_DEPLOY_PARAMS,
   });

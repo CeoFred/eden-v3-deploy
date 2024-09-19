@@ -72,7 +72,23 @@ export const strategyUSDC: IReserveParams = {
   debtCeiling: "0",
   borrowableIsolation: true,
 };
-
+export const strategycNGN: IReserveParams = {
+  strategy: rateStrategyStableOne,
+  baseLTVAsCollateral: "8250",
+  liquidationThreshold: "8500",
+  liquidationBonus: "10400",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: true,
+  flashLoanEnabled: true,
+  reserveDecimals: "6",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1000",
+  supplyCap: "2000000000",
+  borrowCap: "0",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
 export const strategyAAVE: IReserveParams = {
   strategy: rateStrategyVolatileOne,
   baseLTVAsCollateral: "6000",

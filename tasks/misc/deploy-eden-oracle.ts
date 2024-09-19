@@ -1,23 +1,18 @@
-import { run } from "hardhat";
+import { task } from "hardhat/config";
 
-async function verifyContract(address: string, args: any[]) {
-  try {
-    await run("verify:verify", {
-      address,
-      constructorArguments: args,
-    });
-  } catch (e) {
-    console.error(e);
+task(
+  `deploy-EdenOracle`,
+  `Deploys the EdenOracle contract`
+).setAction(async (_, hre) => {
+  if (!hre.network.config.chainId) {
+    throw new Error("INVALID_CHAIN_ID");
   }
-}
 
-async function main() {
-  const contractAddress = "0xF7AD2F64A82f0E7572326CaDE8D48163e40f7CcF";
-  const constructorArgs = ["0x8ECB1EFea1A0EE25f29091a6BbCacf5400f8A2D2","0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9","0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9"]; 
-
-  // await verifyContract(contractAddress, constructorArgs);
-
-  await verifyContract("0x847F25e2360e410Be44F7521EAD4524d0f17089b", [
+  console.log(`\n- EdenOracle deployment`);
+  const { deployer } = await hre.getNamedAccounts();
+  const artifact = await hre.deployments.deploy("AaveOracle", {
+    from: deployer,
+    args: [
       "0x4674905e7EFf208790f001c4C226844B3B7051bf",
       [
   '0xBe4c30Bbeb576a95ff6b1A5C43046124cBdE8326',
@@ -35,17 +30,14 @@ async function main() {
   '0x316830Bf3211188CAeEDE8Ee489E576207bBB1c8',
   '0x2658240e628E0CDc456E998E340a9297774fC763',
   '0x3A60C65407a99a71c7ff26c9054030fd820b57A2',
-  '0x16311969e1bE93a0B9c089EdB7Ba9dBb36188539'
+  '0xe537c1ebaed0773adC1B9796ebe980736E5EaE33'
 ],
 "0x0000000000000000000000000000000000000000",
 "0x0000000000000000000000000000000000000000",
 "100000000"
     ]
-  );
+  });
 
-}
-
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
+  console.log("EdenOracle deployed at:", artifact.address);
+  console.log(`\tFinished EdenOracle deployment`);
 });

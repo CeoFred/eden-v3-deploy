@@ -2,7 +2,7 @@ import { eAssetChainNetwork, IAaveConfiguration } from "../../helpers/types";
 import { AaveMarket } from "../aave/index";
 import { strategyDAI, strategyUSDT, strategyWETH,strategyLINK } from "../aave/reservesConfigs";
 import { ZERO_ADDRESS } from "../../helpers/constants";
-import { strategyAAVE, strategyUSDC, strategyEDEN} from "./reservesConfigs";
+import { strategycNGN, strategyUSDC, strategyEDEN} from "./reservesConfigs";
 
 export const AssetChainTestNetMarket: IAaveConfiguration = {
   ...AaveMarket,
@@ -20,7 +20,7 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
     WRWA: strategyWETH,
     EDEN: strategyEDEN,
     LINK: strategyLINK,
-
+    CNGN:strategycNGN,
   },
   ReserveAssets: {
     [eAssetChainNetwork.main]: {
@@ -42,6 +42,7 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
       WRWA: ZERO_ADDRESS,
       EDEN: ZERO_ADDRESS,
       LINK: ZERO_ADDRESS,
+      CNGN: "0xc125329d053761c9d4Fb167986027a8eeeCCF73f",
 
     },
   },
@@ -62,7 +63,8 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
       EDEN:"0xBBf418E266E87A7ea553D530E175f95d145Cc88F",
       DAI:"0xC9065F8f9b75C30D7D84471295592C2f3eB295eD",
       USDC:"0x233cB21Da63516e5cB5aCe464B7fe28107819c4C",
-      USDT:"0x654BB967d8dE9759840fcC202E5f9c72d88f9381"
+      USDT:"0x654BB967d8dE9759840fcC202E5f9c72d88f9381",
+      CNGN:"0x19c1E0eAe5D11246517f629f3F213aAB782C0C29"
         },
   },
   EModes: {
