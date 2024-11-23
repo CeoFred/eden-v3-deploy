@@ -12,6 +12,7 @@ import {
   eFantomNetwork,
   eOptimismNetwork,
   eBaseNetwork,
+  eAssetChainNetwork
 } from "./types";
 
 require("dotenv").config();
@@ -98,6 +99,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eBaseNetwork.base]: `https://base-mainnet.g.alchemy.com/v2/${getAlchemyKey(
     eBaseNetwork.base
   )}`,
+  [eAssetChainNetwork.main]:`https://mainnet-rpc.assetchain.org`
 };
 
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
@@ -109,6 +111,7 @@ export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eFantomNetwork.main]: true,
   [eOptimismNetwork.main]: true,
   [eBaseNetwork.base]: true,
+  [eAssetChainNetwork.main]: true,
 };
 
 const GAS_PRICE_PER_NET: iParamsPerNetwork<string | number> = {

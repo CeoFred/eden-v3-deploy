@@ -14,15 +14,26 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
   VariableDebtTokenNamePrefix: "AssetChain",
   SymbolPrefix: "RWA",
   ReservesConfig: {
+    DAI: strategyDAI,
     USDC: strategyUSDC,
     USDT: strategyUSDT,
     WRWA: strategyWETH,
     EDEN: strategyEDEN,
+    LINK: strategyLINK,
+    CNGN:strategycNGN,
   },
   ReserveAssets: {
     [eAssetChainNetwork.main]: {
       DAI: "0xYourMainnetAddress",
       LINK: "0xYourMainnetAddress",
+      USDC: "0xYourMainnetAddress",
+      WBTC: "0xYourMainnetAddress",
+      WETH: "0xYourMainnetAddress",
+      USDT: "0xYourMainnetAddress",
+      AAVE: "0xYourMainnetAddress",
+      WRWA: "0xYourMainnetAddress",
+      CRV: "0xYourMainnetAddress",
+      SUSHI: "0xYourMainnetAddress",
     },
     [eAssetChainNetwork.testnet]: {
         DAI: ZERO_ADDRESS,
@@ -37,8 +48,15 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
   },
   ChainlinkAggregator: {
     [eAssetChainNetwork.main]: {
-      USDC: "0x52c88EBC452E6FfD6CF9eB22b99c861E70629f12",
-      WRWA: "0xYourMainnetAggregatorAddress",
+      AAVE: "0xYourMainnetAggregatorAddress",
+      DAI: "0xYourMainnetAggregatorAddress",
+      LINK: "0xYourMainnetAggregatorAddress",
+      USDC: "0xYourMainnetAggregatorAddress",
+      WBTC: "0xYourMainnetAggregatorAddress",
+      WETH: "0xYourMainnetAggregatorAddress",
+      USDT: "0xYourMainnetAggregatorAddress",
+      SUSHI: "0xYourMainnetAggregatorAddress",
+      CRV: "0xYourMainnetAggregatorAddress",
     },
     [eAssetChainNetwork.testnet]: {
       WRWA: "0xd8EccdC2b114eBc4B565Cb399Cb99620d9816194",

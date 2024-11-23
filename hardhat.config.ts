@@ -15,6 +15,7 @@ import {
   eOptimismNetwork,
   ePolygonNetwork,
   eBaseNetwork,
+  eAssetChainNetwork
 } from "./helpers/types";
 import { DEFAULT_NAMED_ACCOUNTS } from "./helpers/constants";
 
@@ -24,9 +25,12 @@ import "hardhat-contract-sizer";
 import "hardhat-dependency-compiler";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@nomiclabs/hardhat-etherscan";
+require("dotenv").config();
 
 const SKIP_LOAD = process.env.SKIP_LOAD === "true";
 const TASK_FOLDERS = ["misc", "market-registry"];
+
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 
 // Prevent to load tasks before compilation and typechain
 if (!SKIP_LOAD) {
@@ -66,6 +70,7 @@ export default {
       url: "http://127.0.0.1:8545",
       ...hardhatNetworkSettings,
     },
+
     tenderly: getCommonNetworkConfig("tenderly", 1),
     main: getCommonNetworkConfig(eEthereumNetwork.main, 1),
     kovan: getCommonNetworkConfig(eEthereumNetwork.kovan, 42),
@@ -127,11 +132,21 @@ export default {
       eBaseNetwork.baseGoerli,
       84531
     ),
-       "assetchain-testnet": {
+      [eAssetChainNetwork.testnet]: {
       url: "https://enugu-rpc.assetchain.org",
       chainId: 42421, 
-      accounts: ['a379752927be518dea1cb50c9e08f72374336f1cdb58aec27a5d152554200d76'],
+      accounts: [PRIVATE_KEY],
        live: false,
+       blockGasLimit:12450000,
+       gasPrice:8000000000,
+    timeout: 100000000,
+       
+    },
+     [eAssetChainNetwork.main]: {
+      url: "https://mainnet-rpc.assetchain.org",
+      chainId: 42420, 
+      accounts: [PRIVATE_KEY],
+       live: true,
        blockGasLimit:12450000,
        gasPrice:8000000000,
     timeout: 100000000,

@@ -13,7 +13,7 @@ import {
   AssetType,
 } from "./types";
 import AaveMarket from "../markets/aave";
-import AssetChainTestNetConfig from "../markets/assetchain"; // Add this import
+import AssetChainTestNetConfig from "../markets/assetchain-testnet"; // Add this import
 import EthereumV3Config from "../markets/ethereum";
 import AaveTestMarket from "../markets/test";
 import HarmonyMarket from "../markets/harmony";
@@ -22,7 +22,7 @@ import FantomMarket from "../markets/fantom";
 import PolygonMarket from "../markets/polygon";
 import OptimisticConfig from "../markets/optimistic";
 import ArbitrumConfig from "../markets/arbitrum";
-import AssetChainTestNetMarket from "../markets/assetchain"
+import AssetChainTestNetMarket from "../markets/assetchain-testnet"
 import BaseConfig from "../markets/base";
 import { isValidAddress } from "./utilities/utils";
 import { AaveProtocolDataProvider } from "../typechain";
