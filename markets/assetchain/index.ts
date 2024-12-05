@@ -1,8 +1,8 @@
 import { eAssetChainNetwork, IAaveConfiguration } from "../../helpers/types";
 import { AaveMarket } from "../aave/index";
-import { strategyDAI, strategyUSDT, strategyWETH,strategyLINK } from "../aave/reservesConfigs";
+import { strategyWETH } from "../aave/reservesConfigs";
 import { ZERO_ADDRESS } from "../../helpers/constants";
-import { strategycNGN, strategyUSDC, strategyEDEN} from "./reservesConfigs";
+import {  strategyUSDC, strategyUSDT} from "./reservesConfigs";
 
 export const AssetChainTestNetMarket: IAaveConfiguration = {
   ...AaveMarket,
@@ -15,14 +15,14 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
   SymbolPrefix: "RWA",
   ReservesConfig: {
     USDC: strategyUSDC,
-    USDT: strategyUSDT,
     WRWA: strategyWETH,
-    EDEN: strategyEDEN,
+    USDT: strategyUSDT,
   },
   ReserveAssets: {
     [eAssetChainNetwork.main]: {
-      DAI: "0xYourMainnetAddress",
-      LINK: "0xYourMainnetAddress",
+      USDC: "0x2B7C1342Cc64add10B2a79C8f9767d2667DE64B2",
+      WRWA: "0x2584D40B5553E81Bb9deC0b6CD1a2E504AAB1709",
+      USDT:"0x26E490d30e73c36800788DC6d6315946C4BbEa24",
     },
     [eAssetChainNetwork.testnet]: {
         DAI: ZERO_ADDRESS,
@@ -37,8 +37,9 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
   },
   ChainlinkAggregator: {
     [eAssetChainNetwork.main]: {
-      USDC: "0x52c88EBC452E6FfD6CF9eB22b99c861E70629f12",
-      WRWA: "0xYourMainnetAggregatorAddress",
+      USDC: "0xf0Ec014Fde27e864C885cd433E1a76765f37d149",
+      WRWA: "0x9794D8B3152aaD47790332Ae4695901a9F826d54",
+      USDT:"0x67b9f799c354e3602A7a55F62F37192ced9f8fd0"
     },
     [eAssetChainNetwork.testnet]: {
       WRWA: "0xd8EccdC2b114eBc4B565Cb399Cb99620d9816194",
@@ -52,11 +53,11 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
   EModes: {
     StableEMode: {
       id: "1",
-      ltv: "9700",
+      ltv: "9000",
       liquidationThreshold: "9750",
       liquidationBonus: "10100",
       label: "Stablecoins",
-      assets: ["USDC", "DAI","USDT"],
+      assets: ["USDC","USDT"],
     },
   },
 };

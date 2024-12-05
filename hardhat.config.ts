@@ -238,7 +238,8 @@ export default {
     enabled: true
   },
     apiKey: {
-      "assetchain-testnet":"abc"
+      "assetchain-testnet":"abc",
+      "assetchain":"somethoke-ax"
     },
     customChains: [
       {
@@ -255,6 +256,14 @@ export default {
         urls: {
           apiURL: "https://scan-testnet.assetchain.org/api",
           browserURL: "https://scan-testnet.assetchain.org/"
+        }
+      },
+       {
+        network: "assetchain",
+        chainId: 42420,
+        urls: {
+          apiURL: "https://scan.assetchain.org/api",
+          browserURL: "https://scan.assetchain.org/"
         }
       }
     ],

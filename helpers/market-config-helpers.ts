@@ -23,6 +23,7 @@ import PolygonMarket from "../markets/polygon";
 import OptimisticConfig from "../markets/optimistic";
 import ArbitrumConfig from "../markets/arbitrum";
 import AssetChainTestNetMarket from "../markets/assetchain-testnet"
+import AssetchainConfig from "../markets/assetchain"
 import BaseConfig from "../markets/base";
 import { isValidAddress } from "./utilities/utils";
 import { AaveProtocolDataProvider } from "../typechain";
@@ -55,6 +56,7 @@ export enum ConfigNames {
   Base = "Base",
   baseGoerli = "base-goerli",
   AssetChainTestNet = "assetchain-testnet",
+  AssetChain = "assetchain",
 }
 
 export const getParamPerNetwork = <T>(
@@ -126,6 +128,8 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
       return BaseConfig;
     case ConfigNames.AssetChainTestNet:
       return AssetChainTestNetMarket
+    case ConfigNames.AssetChain:
+      return AssetchainConfig
     default:
       throw new Error(
         `Unsupported pool configuration: ${configName} is not one of the supported configs ${Object.values(

@@ -47,7 +47,8 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
-  [eAssetChainNetwork.testnet]:"0xFFbA4F1Eb3a61ba3967e0Ace6397436102bB2bDf"
+  [eAssetChainNetwork.testnet]:"0xFFbA4F1Eb3a61ba3967e0Ace6397436102bB2bDf",
+  [eAssetChainNetwork.main]:"0x2584D40B5553E81Bb9deC0b6CD1a2E504AAB1709"
 };
 
 export const ZERO_BYTES_32 =
@@ -107,8 +108,11 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
   "assetchain-testnet": "0xd8EccdC2b114eBc4B565Cb399Cb99620d9816194",
+  assetchain:"0xE30A57e2c77a77144403EAe67CF01D94bdB99ae0",
 };
 
+
+// eth to usd aggregator
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   main: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
   kovan: "0x9326BFA02ADD2366b30bacB125260Af641031331",
@@ -129,6 +133,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   ropsten: "0x12BAaa24D85A4A180F0d5ae67b6aCbDDD58968EA",
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   "assetchain-testnet": "0xd8EccdC2b114eBc4B565Cb399Cb99620d9816194",
+  assetchain:"0xE30A57e2c77a77144403EAe67CF01D94bdB99ae0",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
 };
@@ -150,7 +155,9 @@ export const POOL_ADMIN: Record<string, string> = {
   [eBaseNetwork.base]: "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
   [eBaseNetwork.baseGoerli]: "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
   [eEthereumNetwork.tenderly]: ETHEREUM_SHORT_EXECUTOR,
-  [eAssetChainNetwork.testnet]:"0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9"
+  [eAssetChainNetwork.testnet]:"0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9",
+  [eAssetChainNetwork.main]:"0x54527B09Aeb2Be23F99958Db8f2f827daB863A28"
+
 };
 
 export const EMERGENCY_ADMIN: Record<string, string> = {
@@ -161,8 +168,8 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
-  [eAssetChainNetwork.testnet]:"0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9"
-
+  [eAssetChainNetwork.testnet]:"0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9",
+  [eAssetChainNetwork.main]:"0x54527B09Aeb2Be23F99958Db8f2f827daB863A28"
 };
 
 export const DEFAULT_NAMED_ACCOUNTS = {
