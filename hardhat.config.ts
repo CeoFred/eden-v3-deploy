@@ -45,6 +45,13 @@ export default {
   },
   solidity: {
     compilers: [
+         {
+        version: "0.8.27",
+        settings: {
+          optimizer: { enabled: true, runs: 100_000 },
+          evmVersion: "paris",
+        },
+      },
       {
         version: "0.8.10",
         settings: {

@@ -18,6 +18,7 @@ export const strategyEDEN: IReserveParams = {
   debtCeiling: "0",
   borrowableIsolation: false,
 };
+0
 
 export const strategyWRWA: IReserveParams = {
   strategy: rateStrategyVolatileOne,

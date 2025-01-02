@@ -12,7 +12,7 @@ export const AssetChainTestNetMarket: IAaveConfiguration = {
   ATokenNamePrefix: "AssetChain",
   StableDebtTokenNamePrefix: "AssetChain",
   VariableDebtTokenNamePrefix: "AssetChain",
-  SymbolPrefix: "RWA",
+  SymbolPrefix: "Rwa",
   ReservesConfig: {
     USDC: strategyUSDC,
     WRWA: strategyWETH,

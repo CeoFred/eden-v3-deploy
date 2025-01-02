@@ -27,7 +27,7 @@ This Node.js repository contains the configuration and deployment scripts for th
 ##  How to Run specific task
 
 ``
-npx hardhat deploy-EdenOracle --network assetchain-testnet
+npx hardhat mint-faucet --network assetchain-testnet
 ``
 
 ## How to run specific script

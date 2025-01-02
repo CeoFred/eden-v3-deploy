@@ -12,10 +12,10 @@ async function verifyContract(address: string, args: any[]) {
 }
 
 async function main() {
-  const contractAddress = "0xF7AD2F64A82f0E7572326CaDE8D48163e40f7CcF";
-  const constructorArgs = ["0x8ECB1EFea1A0EE25f29091a6BbCacf5400f8A2D2","0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9","0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9"]; 
+  // const contractAddress = "0xF7AD2F64A82f0E7572326CaDE8D48163e40f7CcF";
+  // const constructorArgs = ["0x8ECB1EFea1A0EE25f29091a6BbCacf5400f8A2D2","0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9","0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9"]; 
 
-  await verifyContract("0x5575900AB3C4D90F77EB26Cf8499762FFA263084", ["0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9"]);
+  // await verifyContract("0x5575900AB3C4D90F77EB26Cf8499762FFA263084", ["0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9"]);
 
 
   // await verifyContract(contractAddress, constructorArgs);
@@ -45,6 +45,16 @@ async function main() {
 // "100000000"
 //     ]
 //   );
+
+
+// verify faucet contract
+  const faucet = "0x598c9Ca8ce5A7D32cbD61eef87B2E1F240c87979"
+  const faucetConstructorArgs = [
+    "0x5dAA96364bD8e0c4f95004ADb4bDe0F2aFe933C9",
+    false,
+    10000
+  ]
+  await verifyContract(faucet, faucetConstructorArgs);
 
 }
 
